@@ -1,0 +1,16 @@
+/* The container holding all customers */
+#customer-container {
+    display: flex;
+    flex-direction: column; /* This stacks them vertically on new lines */
+    gap: 15px;              /* This creates a gap between each card */
+    padding: 20px;
+}
+
+/* Individual customer cards */
+.customer-card {
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 8px;
+    width: 300px; /* Optional: sets a specific width */
+}
