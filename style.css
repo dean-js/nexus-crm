@@ -1,16 +1,32 @@
-/* The container holding all customers */
-#customer-container {
-    display: flex;
-    flex-direction: column; /* This stacks them vertically on new lines */
-    gap: 15px;              /* This creates a gap between each card */
-    padding: 20px;
+/* Base card style remains the same */
+.customer-card {
+    border: 3px solid #ccc; /* Default border */
+    padding: 15px;
+    border-radius: 12px;
+    background-color: white;
+    transition: transform 0.2s; /* Smooth hover effect */
 }
 
-/* Individual customer cards */
-.customer-card {
-    background-color: #f4f4f4;
-    border: 1px solid #ccc;
-    padding: 15px;
+/* Tier Specific Styles */
+.tier-gold {
+    border-color: #FFD700; /* Gold */
+    background-color: #fffdf0;
+}
+
+.tier-silver {
+    border-color: #C0C0C0; /* Silver */
+    background-color: #f5f5f5;
+}
+
+.tier-bronze {
+    border-color: #CD7F32; /* Bronze */
+    background-color: #faf3ee;
+}
+#add-customer-form {
+    margin: 20px;
+    padding: 20px;
+    background-color: #eee;
     border-radius: 8px;
-    width: 300px; /* Optional: sets a specific width */
+    display: flex;
+    gap: 10px; /* Puts space between the inputs and button */
 }

@@ -9,24 +9,44 @@ const customers = [
 // Verify the data is loaded
 console.log("Database Loaded:", customers);
 
-// Get the container element where we will display the customers
+const displayCustomers = () => {
+  container.innerHTML = ""; // Clear screen
 
-const container = document.getElementById("customer-container");
+  customers.forEach((customer) => {
+    const card = document.createElement("div");
+    card.classList.add("customer-card");
 
-customers.forEach((customer) => {
-  // 1. Creates a new div for this customer
-  const card = document.createElement("div");
+    // Logic: Add a class based on the tier string
+    // We use .toLowerCase() to make sure "Gold" or "gold" both work
+    const tier = customer.isPremium.toLowerCase();
 
-  // 2. Give it the CSS class we just made
-  card.classList.add("customer-card");
+    if (tier === "gold") {
+      card.classList.add("tier-gold");
+    } else if (tier === "silver") {
+      card.classList.add("tier-silver");
+    } else if (tier === "bronze") {
+      card.classList.add("tier-bronze");
+    }
 
-  // 3. Put the data inside
-  card.innerHTML = `
-        <h3>${customer.name}</h3>
-        <p>City: ${customer.city}</p>
-        <p>Tier: ${customer.isPremium}</p>
-    `;
+    card.innerHTML = `
+            <h3>${customer.name}</h3>
+            <p>Location: ${customer.city}</p>
+            <p>Status: <strong>${customer.isPremium}</strong></p>
+            <button class="delete-btn" onclick="deleteCustomer(${customer.id})">Delete</button>
+        `;
 
-  // 4. Add it to the page
-  container.appendChild(card);
-});
+    container.appendChild(card);
+  });
+};
+const deleteCustomer = (id) => {
+  // 1. Find the index of the customer with that ID
+  const index = customers.findIndex((c) => c.id === id);
+
+  // 2. Remove them from the array
+  if (index !== -1) {
+    customers.splice(index, 1);
+  }
+
+  // 3. Refresh should display customer informaation
+  displayCustomers();
+};
