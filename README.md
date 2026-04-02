@@ -5,7 +5,7 @@ dynamic rewards, shipping, and membership logic.
 
 ## 🚀 Features
 
-- **Member Tiers:** Logic for Gold, Silver, and Basic memberships.
+- **Member Tiers:** Logic for Gold, Silver, and Bronze memberships.
 - **Dynamic Shipping:** Cost calculation based on location (Leeds vs. Others).
 - **Data Filtering:** Search functions to find specific customer segments.
 - **DOM Rendering:** Displaying data dynamically in the browser.
@@ -21,4 +21,4 @@ dynamic rewards, shipping, and membership logic.
 - Master the difference between `const` and `let`.
 - Practice nesting objects inside arrays.
 - Implement complex `if/else` logic with multiple conditions (`&&`).
--
+- Understand basic fundementals of HTML,CSS and JavaScript
